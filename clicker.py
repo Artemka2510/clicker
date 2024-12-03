@@ -1,6 +1,8 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLabel, QProgressBar, QMessageBox
 from PyQt5.QtCore import QTimer
+
+
 class ClickerGame(QWidget):
     def __init__(self):
         super().__init__()
@@ -36,8 +38,7 @@ class ClickerGame(QWidget):
             if self.score >= self.score_goal:
                 QMessageBox.information(self, "Победа", "Вы достигли цели!")
                 self.reset_game()
-            else:
-                QMessageBox.warning(self, "Энергия исчерпана", "Подождите восстановления энергии!")
+
     def recover_energy(self):
         if self.energy < self.max_energy:
             self.energy += 1
